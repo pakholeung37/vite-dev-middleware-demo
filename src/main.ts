@@ -1,3 +1,5 @@
+import "./index.css"
+
 const dom = window.document.getElementById("app")
 if (dom) {
   dom.innerText = "vite middleware had been attatched"
