@@ -65,6 +65,11 @@
   resolved "https://registry.npm.taobao.org/@babel/parser/download/@babel/parser-7.12.11.tgz?cache=0&sync_timestamp=1608076996366&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Fparser%2Fdownload%2F%40babel%2Fparser-7.12.11.tgz#9ce3595bcd74bc5c466905e86c535b8b25011e79"
   integrity sha1-nONZW810vFxGaQXobFNbiyUBHnk=
 
+"@babel/standalone@^7.12.12":
+  version "7.12.14"
+  resolved "https://registry.npm.taobao.org/@babel/standalone/download/@babel/standalone-7.12.14.tgz#6a0342e1d0a312673807cd83fda197c72fc65fc6"
+  integrity sha1-agNC4dCjEmc4B82D/aGXxy/GX8Y=
+
 "@babel/template@^7.12.7":
   version "7.12.7"
   resolved "https://registry.npm.taobao.org/@babel/template/download/@babel/template-7.12.7.tgz?cache=0&sync_timestamp=1605904556456&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40babel%2Ftemplate%2Fdownload%2F%40babel%2Ftemplate-7.12.7.tgz#c817233696018e39fbb6c491d2fb684e05ed43bc"
@@ -274,6 +279,11 @@
   dependencies:
     "@types/braces" "*"
 
+"@types/node@^12.18.0":
+  version "12.19.15"
+  resolved "https://registry.npm.taobao.org/@types/node/download/@types/node-12.19.15.tgz#0de7e978fb43db62da369db18ea088a63673c182"
+  integrity sha1-DefpePtD22LaNp2xjqCIpjZzwYI=
+
 "@typescript-eslint/eslint-plugin@^4.14.0":
   version "4.14.1"
   resolved "https://registry.npm.taobao.org/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-4.14.1.tgz#22dd301ce228aaab3416b14ead10b1db3e7d3180"
@@ -344,6 +354,16 @@
   dependencies:
     "@typescript-eslint/types" "4.14.1"
     eslint-visitor-keys "^2.0.0"
+
+"@vitejs/plugin-legacy@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.npm.taobao.org/@vitejs/plugin-legacy/download/@vitejs/plugin-legacy-1.2.3.tgz#1007033b0a328e5c0d8d21683383dc40d8fed6a3"
+  integrity sha1-EAcDOwoyjlwNjSFoM4PcQNj+1qM=
+  dependencies:
+    "@babel/standalone" "^7.12.12"
+    core-js "^3.8.2"
+    regenerator-runtime "^0.13.7"
+    systemjs "^6.8.3"
 
 "@vitejs/plugin-vue@^1.1.2":
   version "1.1.4"
@@ -799,6 +819,11 @@ cookie@^0.4.1:
   version "0.4.1"
   resolved "https://registry.npm.taobao.org/cookie/download/cookie-0.4.1.tgz?cache=0&sync_timestamp=1599054117231&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcookie%2Fdownload%2Fcookie-0.4.1.tgz#afd713fe26ebd21ba95ceb61f9a8116e50a537d1"
   integrity sha1-r9cT/ibr0hupXOth+agRblClN9E=
+
+core-js@^3.8.2:
+  version "3.8.3"
+  resolved "https://registry.npm.taobao.org/core-js/download/core-js-3.8.3.tgz?cache=0&sync_timestamp=1611040749668&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcore-js%2Fdownload%2Fcore-js-3.8.3.tgz#c21906e1f14f3689f93abcc6e26883550dd92dd0"
+  integrity sha1-whkG4fFPNon5OrzG4miDVQ3ZLdA=
 
 cors@^2.8.5:
   version "2.8.5"
@@ -1881,6 +1906,11 @@ raw-body@2.4.0:
     iconv-lite "0.4.24"
     unpipe "1.0.0"
 
+regenerator-runtime@^0.13.7:
+  version "0.13.7"
+  resolved "https://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.13.7.tgz?cache=0&sync_timestamp=1595456311465&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fregenerator-runtime%2Fdownload%2Fregenerator-runtime-0.13.7.tgz#cac2dacc8a1ea675feaabaeb8ae833898ae46f55"
+  integrity sha1-ysLazIoepnX+qrrriugziYrkb1U=
+
 regexpp@^3.0.0, regexpp@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npm.taobao.org/regexpp/download/regexpp-3.1.0.tgz#206d0ad0a5648cffbdb8ae46438f3dc51c9f78e2"
@@ -2086,6 +2116,11 @@ supports-color@^7.1.0:
   integrity sha1-G33NyzK4E4gBs+R4umpRyqiWSNo=
   dependencies:
     has-flag "^4.0.0"
+
+systemjs@^6.8.3:
+  version "6.8.3"
+  resolved "https://registry.npm.taobao.org/systemjs/download/systemjs-6.8.3.tgz#67e27f49242e9d81c2b652b204ae54e8bfcc75a3"
+  integrity sha1-Z+J/SSQunYHCtlKyBK5U6L/MdaM=
 
 table@^6.0.4:
   version "6.0.7"
