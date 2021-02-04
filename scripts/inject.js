@@ -2,10 +2,11 @@ const path = require("path")
 const fs = require("fs")
 const manifest = require("../dist/manifest.json")
 const viteConfig = require("../vite.config")
+const isProduction = process.env.NODE_ENV === "production"
 
-const esmInjectPlaceholder = "<!--#esm inject placeholder#-->"
-const cssInjectPlaceholder = "<!--#css inject placeholder#-->"
-const nomoduleInjectPlaceholder = "<!--#nomodule inject placeholder#-->"
+const esmInjectPlaceholder = /(<!--#esm#-->)[\s\S]*?(<!--##-->)/
+const cssInjectPlaceholder = /(<!--#css#-->)[\s\S]*?(<!--##-->)/
+const nomoduleInjectPlaceholder = /(<!--#nomodule#-->)[\s\S]*?(<!--##-->)/
 const esmTemplate = src =>
   `<script type="module" crossorigin src="${viteConfig.base}${src}"></script>`
 const cssTemplate = src =>
@@ -27,22 +28,28 @@ const safari10NoModuleFix = `<script nomodule>!function(){var e=document,t=e.cre
 
   const esm = []
   const csses = []
-  const nomodule = [safari10NoModuleFix]
+  const nomodule = []
 
-  for (const ref in manifest) {
-    if (!/legacy/.test(ref)) {
-      if (/vite\/legacy-polyfills/.test(ref)) {
-        esm.push(viteLegacyTemplate(manifest[ref].file))
+  // 开发模式， 注入脚本
+  if (!isProduction) {
+    console.log(viteConfig)
+  } else {
+    nomodule.push(safari10NoModuleFix)
+    for (const ref in manifest) {
+      if (!/legacy/.test(ref)) {
+        if (/vite\/legacy-polyfills/.test(ref)) {
+          esm.push(viteLegacyTemplate(manifest[ref].file))
+        } else {
+          esm.push(esmTemplate(manifest[ref].file))
+        }
       } else {
-        esm.push(esmTemplate(manifest[ref].file))
+        nomodule.push(nomoduleTemplate(manifest[ref].file))
       }
-    } else {
-      nomodule.push(nomoduleTemplate(manifest[ref].file))
-    }
-    if (manifest[ref].css) {
-      manifest[ref].css.forEach(css => {
-        csses.push(cssTemplate(css))
-      })
+      if (manifest[ref].css) {
+        manifest[ref].css.forEach(css => {
+          csses.push(cssTemplate(css))
+        })
+      }
     }
   }
 

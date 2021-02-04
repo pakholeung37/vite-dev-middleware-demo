@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "attach": "node ./scripts/middleware-mode.js",
+    "attach": "node ./scripts/inject.js",
     "build": "vuedx-typecheck . && vite build",
-    "deploy": "yarn build && node ./scripts/inject.js",
+    "deploy": "yarn build && cross-env NODE_ENV=production node ./scripts/inject.js",
     "serve": "vite preview"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "@vuedx/typecheck": "^0.6.0",
     "@vuedx/typescript-plugin-vue": "^0.6.0",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.0",
